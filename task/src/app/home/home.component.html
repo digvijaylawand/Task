@@ -1,0 +1,65 @@
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../assets/images/a1.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/images/a2.jpg" class="d-block w-100" alt="..." />
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/images/a3.jpg" class="d-block w-100" alt="..." />
+    </div>
+  </div>
+  
+</div>
+
+<div class="overlay">
+  <div class="content-wrapper">
+    <div class="details">
+      <h1 class="overlay-h1">I'm looking for..</h1>
+      <div class="top">
+        <input placeholder="Enter a Job Description" />
+        <button class="button"><i class="fa fa-search"></i> Search</button>
+      </div>
+      <div class="bottom">
+        <div class="type">
+          <input type="checkbox" name="fulltime" /> Full Time
+          <input type="checkbox" name="partcasual" value="Bike" /> Part Time /
+          Casual / Freelance
+        </div>
+        <select name="slct" id="slct">
+          <option>Select your Location</option>
+          <option value="1">Mumbai</option>
+          <option value="2">Thane</option>
+          <option value="3">Pune</option>
+        </select>
+      </div>
+      <div class="register">
+        <button class="button" (click)="onRegisterClick()">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="leaders">
+  <div class="info">
+    <h4>We're leaders in</h4>
+    <h3>Creative Digital Recruitment</h3>
+    <span class="line-break"></span>
+    <p>
+      Based in Surry Hills,the creative hub of Sydney. We are surrounded by
+      creativity and reflects on the type of jobs we recruit for.
+    </p>
+    <a class="anchor"> FIND OUT MORE ABOUT US </a>
+  </div>
+</div>
+
