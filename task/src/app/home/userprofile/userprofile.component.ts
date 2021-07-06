@@ -26,7 +26,7 @@ export class UserprofileComponent implements OnInit {
      this._userService.getUserData(this.id).subscribe(data=>{
       console.log(data);
     
-      this.userDetails=data[this.id-1];
+      this.userDetails=data[0];
 
     })
   }

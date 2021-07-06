@@ -10,7 +10,7 @@
                         <!-- <img [src]="profileImage ? transform() :'../../assets/images/user-default-img.jfif'" style="height: 180px;width:180px;margin: 35px 10px 10px 0px;"> -->
                         <!-- <img [src]="transform()"> -->
                         <div class="profile-button">
-                            <button type="button" class="button-editprofile btn btn-outline-dark">Edit Photo</button>
+                            <button type="button" class="button-editprofile btn btn-outline-dark" (click)="profileEdit()">Edit Photo</button>
                             <button type="button" class="button-editprofile btn btn-outline-dark" (click)="profileEdit()">Edit Profile</button>
                         </div>
                     </div>

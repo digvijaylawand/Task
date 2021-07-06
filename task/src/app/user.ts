@@ -12,4 +12,5 @@ export interface User {
   address1:string;
   address2:string;
   ischeck:string;
+  interests: {};
 }

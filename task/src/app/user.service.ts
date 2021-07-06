@@ -21,18 +21,18 @@ export class UserService {
 
   addUsers(user): Observable<User> {
     
-    return  this._http.post<User>(`${localUrl}/api/user/`, user, httpOptions);
+    return  this._http.post<User>(`${localUrl}/user/`, user, httpOptions);
   }
 
   getUserData(id): Observable<User> {
-    console.log(`${localUrl}/api/user?id=`+ id);
+    console.log(`${localUrl}/user?id=`+ id);
     
-    return  this._http.get<User>(`${localUrl}/api/user?id=`+ id, httpOptions);
+    return  this._http.get<User>(`${localUrl}/user?id=`+ id, httpOptions);
   }
 
   updateUser(user,id): Observable<User> {
-    console.log(`${localUrl}/api/user?id=`+ id);
+    console.log(`${localUrl}/user?id=`+ id);
     
-    return  this._http.put<User>(`${localUrl}/api/user?id=`+ id,user, httpOptions);
+    return  this._http.put<User>(`${localUrl}/user?id=`+ id,user, httpOptions);
   }
 }

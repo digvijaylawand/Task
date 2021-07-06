@@ -18,7 +18,7 @@ export class UsermanagerComponent implements OnInit {
   imageError : string;
   registerForm: FormGroup;
   userDetailsedit : User;
-  // userList: any = [];
+
   message: string;
   interestList: string[] = [];
   visible = true;
@@ -62,7 +62,7 @@ export class UsermanagerComponent implements OnInit {
   getUpdatedUser(){
     this._userservice.getUserData(this.id).subscribe(data=>{
       console.log(data);
-      this.userDetailsedit=data[this.id-1];
+      this.userDetailsedit=data[0];
       console.log(this.userDetailsedit.fname);
       this.registerForm.patchValue({ 
         fname: this.userDetailsedit.fname,
@@ -71,7 +71,12 @@ export class UsermanagerComponent implements OnInit {
         mobile: this.userDetailsedit.mobile,
         state: this.userDetailsedit.state,
         country: this.userDetailsedit.country,
-        age: this.userDetailsedit.age
+        age: this.userDetailsedit.age,
+        address: this.userDetailsedit.address,
+        address1: this.userDetailsedit.address1,
+        address2: this.userDetailsedit.address2,
+        interests: this.userDetailsedit.interests,
+        image: this.userDetailsedit.image
      })
     })
     
