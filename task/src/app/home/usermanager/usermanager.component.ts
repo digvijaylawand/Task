@@ -93,10 +93,12 @@ onSubmit() {
   
     this._userservice.updateUser(this.registerForm.value,this.id).subscribe(data => {
       console.log(data)
+      console.log("after update user")
       this.activeModal.close({success: true,id: data.id})
       this.getUpdatedUser() 
+      console.log("after getupdated user")
       this._router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
-        this._router.navigate(['user-profile']);
+        this._router.navigate(['user-profile/'+this.id]);
     });
       
       
@@ -127,19 +129,20 @@ onSubmit() {
     this.imageError=null;
     window.URL = window.URL;
     const file = (<HTMLInputElement>event.target).files[0];
-    console.log(1);
+    console.log(file +"1");
     if (file) {
       
       this.registerForm.get('image1').patchValue(file.name);
       
       const img = new Image();
        img.src = window.URL.createObjectURL( file );
-       console.log(2);
+       console.log(img.src +"2");
        const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
         // const img = new Image();
         img.src = reader.result as string;
+        console.log(img.src +"3");
         img.onload = () => {
           const height = img.naturalHeight;
           const width = img.naturalWidth;
@@ -157,6 +160,7 @@ onSubmit() {
        var readerr = new FileReader();
        readerr.onload = this._handleReaderLoaded.bind(this);
        readerr.readAsBinaryString(file);
+       console.log(img.src +"4");
       }
       }
       _handleReaderLoaded(readerEvt) {

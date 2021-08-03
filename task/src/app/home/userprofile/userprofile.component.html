@@ -3,23 +3,56 @@
     <div class="content-wrapper">
         <div class="card">
             <div class="row">
-                <div class="col-md-4" >
+                <div class="col-md-1">
+
+                </div>
+                <div class="col-md-3" >
                     <div class="row profile">
-                        <h3>Profile</h3>
-                        <img src="{{userDetails?.image}}" style="height: 180px;width:180px;margin: 35px 10px 10px 0px;">
+                        <h3 style="font-size: 20px;font-weight: 500;">Profile</h3>
+                        <form>
+                            <div class="form-group">
+                                <fieldset class="form-group">
+                        
+                                   
+                                    {{imageError}}
+                                    <div class="custom-file fileInputProfileWrap">
+                                        
+                                        <div class="img-space">
+                        
+                                            <ng-container *ngIf="isImageSaved; else elseTemplate">
+                                                <img [src]="cardImageBase64" />
+                                            </ng-container>
+                                            <ng-template #elseTemplate>
+                        
+                                                <img src="{{userDetails?.image}}" style="height: 200px;width:180px;margin: 35px 10px 10px 90px;">
+                                            </ng-template>
+                        
+                                        </div>
+                                        <input type="file" (change)="fileChangeEvent($event)" class="fileInputProfile">
+                                        <div class="profile-button">
+                                            <label class="button-editprofile btn btn-outline-dark">
+                                            <input type="file" (change)="fileChangeEvent($event)">Update Photo
+                                            </label>
+                                            <button type="button" class="button-editprofile btn btn-outline-dark" (click)="profileEdit()">Edit Profile</button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </form>
+                        <!--<img src="{{userDetails?.image}}" style="height: 180px;width:180px;margin: 35px 10px 10px 0px;"> -->
                         <!-- <img [src]="profileImage ? transform() :'../../assets/images/user-default-img.jfif'" style="height: 180px;width:180px;margin: 35px 10px 10px 0px;"> -->
                         <!-- <img [src]="transform()"> -->
-                        <div class="profile-button">
-                            <button type="button" class="button-editprofile btn btn-outline-dark" (click)="profileEdit()">Edit Photo</button>
-                            <button type="button" class="button-editprofile btn btn-outline-dark" (click)="profileEdit()">Edit Profile</button>
-                        </div>
+                        
                     </div>
                 </div>
-                <div class="col-md-8" style="padding: 70px;">
+                <div class="col-md-6" style="padding: 70px;font-size: 20px;">
                     <div class="row">
                         <p>I'm {{userDetails?.fname}} {{userDetails?.lname}} and I am {{userDetails?.age}} years old and you can send your emails to <a href="#">{{userDetails?.email}}</a> I live in the state of {{userDetails?.state}}. I like to play hockey,football and reading books. And please send me newsletters on following address : {{userDetails?.address}} {{userDetails?.address1}} {{userDetails?.address2}}  . Please reach out to me on my {{userDetails?.mobile}}</p>
                  </div>
                     <button type="button" class="btn btn-success">I Agree</button>
+                </div>
+                <div class="col-md-2">
+
                 </div>
             </div>
         </div>

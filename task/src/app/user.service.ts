@@ -33,6 +33,12 @@ export class UserService {
   updateUser(user,id): Observable<User> {
     console.log(`${localUrl}/user?id=`+ id);
     
-    return  this._http.put<User>(`${localUrl}/user?id=`+ id,user, httpOptions);
+    return  this._http.put<User>(`${localUrl}/user/`+ id,user, httpOptions);
   }
+
+  updateImage(user,id): Observable<User> {
+  
+    return this._http.patch<User>(`${localUrl}/user/`+ id,user, httpOptions);
+  }
+
 }
